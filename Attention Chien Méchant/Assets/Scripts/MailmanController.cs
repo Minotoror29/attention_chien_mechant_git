@@ -50,12 +50,16 @@ public class MailmanController : PlayerController
 
     private void OnEnable()
     {
+        controls.Gameplay.Enable();
+
         OnCollision += BikeCollision;
         OnCrowd += CrowdCollision;
     }
 
     private void OnDisable()
     {
+        controls.Gameplay.Disable();
+
         OnCollision -= BikeCollision;
         OnCrowd -= CrowdCollision;
     }

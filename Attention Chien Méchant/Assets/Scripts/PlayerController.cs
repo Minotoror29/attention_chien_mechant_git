@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof (Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float tiling;
 
+    [NonSerialized] public PlayerControls controls;
     public KeyCode up;
     public KeyCode down;
     public KeyCode right;
@@ -26,6 +28,16 @@ public class PlayerController : MonoBehaviour
 
     public event Action OnCollision;
     public event Action OnCrowd;
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+
+        /*controls.Gameplay.Up.performed += ctx => Up();
+        controls.Gameplay.Down.performed += ctx => Down();
+        controls.Gameplay.Right.performed += ctx => Right();
+        controls.Gameplay.Left.performed += ctx => Left();*/
+    }
 
     private void Start()
     {
@@ -42,26 +54,25 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeDirection()
     {
-
-        if (!stunned)
+        /*if (!stunned)
         {
             if (Input.GetKeyDown(up))
             {
-                wantedDirection = Vector2.up;
+                Up();
             }
             else if (Input.GetKeyDown(down))
             {
-                wantedDirection = Vector2.down;
+                Down();
             }
             else if (Input.GetKeyDown(right))
             {
-                wantedDirection = Vector2.right;
+                Right();
             }
             else if (Input.GetKeyDown(left))
             {
-                wantedDirection = Vector2.left;
+                Left();
             }
-        }
+        }*/
 
         if (transform.position == (Vector3)direction)
         {
@@ -69,6 +80,30 @@ public class PlayerController : MonoBehaviour
             direction += wantedDirection * tiling;
         }
     }
+
+    public void Up()
+    {
+        if (!stunned)
+            wantedDirection = Vector2.up;
+    }
+
+    public void Down()
+    {
+        if (!stunned)
+            wantedDirection = Vector2.down;
+    }
+    public void Right()
+    {
+        if (!stunned)
+            wantedDirection = Vector2.right;
+    }
+
+    public void Left()
+    {
+        if (!stunned)
+            wantedDirection = Vector2.left;
+    }
+
 
     private void FixedUpdate()
     {
@@ -111,5 +146,15 @@ public class PlayerController : MonoBehaviour
         wantedDirection = Vector2.zero;
 
         OnCollision?.Invoke();
+    }
+
+    private void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Gameplay.Disable();
     }
 }

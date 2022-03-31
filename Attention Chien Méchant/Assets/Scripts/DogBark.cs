@@ -12,10 +12,10 @@ public class DogBark : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(barkKey))
+        /*if (Input.GetKeyDown(barkKey))
         {
             Bark();
-        }
+        }*/
 
         if (barkObject.activeSelf)
         {
