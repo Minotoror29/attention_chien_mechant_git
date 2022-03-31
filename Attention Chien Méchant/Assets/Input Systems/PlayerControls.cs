@@ -15,7 +15,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""Player"",
             ""id"": ""3284114b-d481-4572-bda9-705387d4521a"",
             ""actions"": [
                 {
@@ -145,12 +145,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Up = m_Gameplay.FindAction("Up", throwIfNotFound: true);
-        m_Gameplay_Down = m_Gameplay.FindAction("Down", throwIfNotFound: true);
-        m_Gameplay_Left = m_Gameplay.FindAction("Left", throwIfNotFound: true);
-        m_Gameplay_Right = m_Gameplay.FindAction("Right", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Up = m_Player.FindAction("Up", throwIfNotFound: true);
+        m_Player_Down = m_Player.FindAction("Down", throwIfNotFound: true);
+        m_Player_Left = m_Player.FindAction("Left", throwIfNotFound: true);
+        m_Player_Right = m_Player.FindAction("Right", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -197,44 +197,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_Gameplay_Up;
-    private readonly InputAction m_Gameplay_Down;
-    private readonly InputAction m_Gameplay_Left;
-    private readonly InputAction m_Gameplay_Right;
-    public struct GameplayActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Up;
+    private readonly InputAction m_Player_Down;
+    private readonly InputAction m_Player_Left;
+    private readonly InputAction m_Player_Right;
+    public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
-        public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Up => m_Wrapper.m_Gameplay_Up;
-        public InputAction @Down => m_Wrapper.m_Gameplay_Down;
-        public InputAction @Left => m_Wrapper.m_Gameplay_Left;
-        public InputAction @Right => m_Wrapper.m_Gameplay_Right;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Up => m_Wrapper.m_Player_Up;
+        public InputAction @Down => m_Wrapper.m_Player_Down;
+        public InputAction @Left => m_Wrapper.m_Player_Left;
+        public InputAction @Right => m_Wrapper.m_Player_Right;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void SetCallbacks(IGameplayActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Up.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUp;
-                @Up.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUp;
-                @Up.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUp;
-                @Down.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDown;
-                @Down.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDown;
-                @Down.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDown;
-                @Left.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeft;
-                @Left.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeft;
-                @Left.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeft;
-                @Right.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRight;
-                @Right.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRight;
-                @Right.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRight;
+                @Up.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUp;
+                @Down.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDown;
+                @Left.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRight;
             }
-            m_Wrapper.m_GameplayActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Up.started += instance.OnUp;
@@ -252,8 +252,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             }
         }
     }
-    public GameplayActions @Gameplay => new GameplayActions(this);
-    public interface IGameplayActions
+    public PlayerActions @Player => new PlayerActions(this);
+    public interface IPlayerActions
     {
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);

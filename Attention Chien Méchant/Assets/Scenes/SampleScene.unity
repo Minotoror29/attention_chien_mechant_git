@@ -255,7 +255,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 5656522709839963126, guid: 279629964f98ed540b38a5759177c556, type: 3}
+  m_PlayerPrefab: {fileID: 741585056520504077, guid: 8b8d48676b647f34e8526a370a16f28d, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -474,10 +474,6 @@ PrefabInstance:
     - target: {fileID: 5656522709839963126, guid: 279629964f98ed540b38a5759177c556, type: 3}
       propertyPath: m_Name
       value: Mailman
-      objectReference: {fileID: 0}
-    - target: {fileID: 5656522709839963126, guid: 279629964f98ed540b38a5759177c556, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 279629964f98ed540b38a5759177c556, type: 3}
@@ -1021,17 +1017,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2022745939 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5656522709839963123, guid: 279629964f98ed540b38a5759177c556, type: 3}
-  m_PrefabInstance: {fileID: 565750206}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d930a29af380241be22d36ff37ac6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2050731430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,25 +1294,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
-    - target: {fileID: 1703089164834308249, guid: eeb5a5597063a38449452ad1e6ee589a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3771381937213768725, guid: eeb5a5597063a38449452ad1e6ee589a, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2022745939}
-    - target: {fileID: 3771381937213768725, guid: eeb5a5597063a38449452ad1e6ee589a, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2022745939}
-    - target: {fileID: 3771381937213768725, guid: eeb5a5597063a38449452ad1e6ee589a, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2022745939}
-    - target: {fileID: 3771381937213768725, guid: eeb5a5597063a38449452ad1e6ee589a, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2022745939}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb5a5597063a38449452ad1e6ee589a, type: 3}

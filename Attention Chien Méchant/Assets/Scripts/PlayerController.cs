@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    public int playerindex;
+
     [NonSerialized] public Vector2 wantedDirection;
     [NonSerialized] public Vector2 direction;
     [NonSerialized] public Vector2 previousDirection;
@@ -17,12 +19,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float tiling;
 
     [NonSerialized] public PlayerControls controls;
-    public KeyCode up;
+    /*public KeyCode up;
     public KeyCode down;
     public KeyCode right;
-    public KeyCode left;
+    public KeyCode left;*/
 
-    private bool stunned = false;
+    public bool stunned = false;
     [SerializeField] private float stunTime;
     private float stunTimer = 0;
 
@@ -150,11 +152,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        controls.Gameplay.Enable();
+        controls.Player.Enable();
     }
 
     private void OnDisable()
     {
-        controls.Gameplay.Disable();
+        controls.Player.Disable();
     }
 }
