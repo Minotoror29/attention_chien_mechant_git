@@ -141,6 +141,134 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player 2"",
+            ""id"": ""aa031e35-8623-49dc-be71-c9dd93c38289"",
+            ""actions"": [
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f7c0949-a345-4f4a-bb24-6bcb13550d78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""f0717517-0b46-4bc9-bbbc-9593701b7688"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""beb62b23-2120-4c0c-b3de-8cc8c5aa8505"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""512b8c4d-d434-4871-a927-83b15c70a9fd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c5c62d89-78f8-4bd2-9093-57adf8f64e38"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d5e4d53-f689-4a7f-b95d-63f5fa494dd9"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41e8e901-1ff3-4db7-8aa1-220d952150b6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ac9bba6-4738-4aa5-b92f-e8ed79c2fbe9"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc1939b5-c28d-4f89-addb-dcc1e67f5d87"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71208ec3-0e42-42a6-af56-31bfc3c1b4d1"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa6f838f-702f-4063-8c1d-fd7bb03e0858"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff829a8b-4cb1-46f4-9744-f7434fc1b60b"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -151,6 +279,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Down = m_Player.FindAction("Down", throwIfNotFound: true);
         m_Player_Left = m_Player.FindAction("Left", throwIfNotFound: true);
         m_Player_Right = m_Player.FindAction("Right", throwIfNotFound: true);
+        // Player 2
+        m_Player2 = asset.FindActionMap("Player 2", throwIfNotFound: true);
+        m_Player2_Up = m_Player2.FindAction("Up", throwIfNotFound: true);
+        m_Player2_Down = m_Player2.FindAction("Down", throwIfNotFound: true);
+        m_Player2_Left = m_Player2.FindAction("Left", throwIfNotFound: true);
+        m_Player2_Right = m_Player2.FindAction("Right", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -253,7 +387,71 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Player 2
+    private readonly InputActionMap m_Player2;
+    private IPlayer2Actions m_Player2ActionsCallbackInterface;
+    private readonly InputAction m_Player2_Up;
+    private readonly InputAction m_Player2_Down;
+    private readonly InputAction m_Player2_Left;
+    private readonly InputAction m_Player2_Right;
+    public struct Player2Actions
+    {
+        private @PlayerControls m_Wrapper;
+        public Player2Actions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Up => m_Wrapper.m_Player2_Up;
+        public InputAction @Down => m_Wrapper.m_Player2_Down;
+        public InputAction @Left => m_Wrapper.m_Player2_Left;
+        public InputAction @Right => m_Wrapper.m_Player2_Right;
+        public InputActionMap Get() { return m_Wrapper.m_Player2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player2Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer2Actions instance)
+        {
+            if (m_Wrapper.m_Player2ActionsCallbackInterface != null)
+            {
+                @Up.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnUp;
+                @Down.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnDown;
+                @Left.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnRight;
+            }
+            m_Wrapper.m_Player2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+                @Right.started += instance.OnRight;
+                @Right.performed += instance.OnRight;
+                @Right.canceled += instance.OnRight;
+            }
+        }
+    }
+    public Player2Actions @Player2 => new Player2Actions(this);
     public interface IPlayerActions
+    {
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
+    }
+    public interface IPlayer2Actions
     {
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
