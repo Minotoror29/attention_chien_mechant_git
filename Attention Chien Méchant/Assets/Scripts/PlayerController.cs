@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float stunTime;
     private float stunTimer = 0;
 
+    public bool inCrowd = false;
+
     public event Action OnCollision;
     public event Action OnCrowd;
 
@@ -135,7 +137,7 @@ public class PlayerController : MonoBehaviour
     {
         if (inCrowd)
         {
-            actualSpeed = speedInCrowd;
+            actualSpeed -= speedInCrowd;
         } else
         {
             actualSpeed = startSpeed;
