@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crowd : MonoBehaviour
 {
-    [SerializeField] private float speedReduction;
+    [SerializeField] private float speedInCrowd;
 
     private bool deactivated = false;
     [SerializeField] private float deactivationTime;
@@ -16,7 +16,7 @@ public class Crowd : MonoBehaviour
         {
             if (collision.GetComponent<PlayerController>())
             {
-                collision.GetComponent<PlayerController>().Crowd(true, speedReduction);
+                collision.GetComponent<PlayerController>().Crowd(true, speedInCrowd);
             }
         }
     }
@@ -27,7 +27,7 @@ public class Crowd : MonoBehaviour
         {
             if (collision.GetComponent<PlayerController>())
             {
-                collision.GetComponent<PlayerController>().Crowd(false, speedReduction);
+                collision.GetComponent<PlayerController>().Crowd(false, speedInCrowd);
             }
         }
     }

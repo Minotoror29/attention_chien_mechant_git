@@ -15,7 +15,7 @@ public class MailmanController : PlayerController
         }
 
         onBike = true;
-        speed += bikeSpeedBoost;
+        actualSpeed += bikeSpeedBoost;
         Destroy(bike);
     }
 
@@ -32,7 +32,7 @@ public class MailmanController : PlayerController
     private void FallOffBike()
     {
         onBike = false;
-        speed -= bikeSpeedBoost;
+        actualSpeed = startSpeed;
         Stun();
     }
 

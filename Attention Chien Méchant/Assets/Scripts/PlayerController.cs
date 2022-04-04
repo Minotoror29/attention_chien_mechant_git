@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     [NonSerialized] public Vector2 wantedDirection;
     [NonSerialized] public Vector2 direction;
     [NonSerialized] public Vector2 previousDirection;
-    public float speed;
+    public float startSpeed;
+    public float actualSpeed;
 
     [SerializeField] private float tiling;
 
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+        actualSpeed = startSpeed;
         direction = transform.position;
     }
 
@@ -109,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, direction, actualSpeed * Time.deltaTime);
     }
 
     public void Stun()
@@ -129,14 +131,14 @@ public class PlayerController : MonoBehaviour
         stunTimer -= Time.deltaTime;
     }
 
-    public void Crowd(bool inCrowd, float speedReduction)
+    public void Crowd(bool inCrowd, float speedInCrowd)
     {
         if (inCrowd)
         {
-            speed -= speedReduction;
+            actualSpeed = speedInCrowd;
         } else
         {
-            speed += speedReduction;
+            actualSpeed = startSpeed;
         }
 
         OnCrowd?.Invoke();
