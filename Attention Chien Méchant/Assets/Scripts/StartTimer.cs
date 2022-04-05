@@ -9,16 +9,22 @@ public class StartTimer : MonoBehaviour
     private int timeOnText;
     [SerializeField] private Text timerText;
     [SerializeField] private GameObject timerCanvas;
+    private bool counting = true;
 
     private void Update()
     {
-        if (timer > 0)
+        if (counting)
         {
-            timer -= Time.deltaTime;
-        } else
-        {
-            timerCanvas.SetActive(false);
-            GetComponent<GameManager>().canPlay = true;
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                timerCanvas.SetActive(false);
+                GetComponent<GameManager>().canPlay = true;
+                counting = false;
+            }
         }
 
         if (timer > 2)

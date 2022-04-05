@@ -20,7 +20,7 @@ public class MailmanController : PlayerController
         Destroy(bike);
     }
 
-    public void BikeCollision()
+    public void BikeCollision(string tag)
     {
         if (!onBike)
         {
@@ -49,19 +49,25 @@ public class MailmanController : PlayerController
         FallOffBike();
     }
 
+    public void DogCollision(string tag)
+    {
+        if (tag == "Dog")
+        {
+            gm.GameOver(PlayerType.Dog);
+        }
+    }
+
     private void OnEnable()
     {
-        controls.Player.Enable();
-
         OnCollision += BikeCollision;
+        OnCollision += DogCollision;
         OnCrowd += CrowdCollision;
     }
 
     private void OnDisable()
     {
-        controls.Player.Disable();
-
         OnCollision -= BikeCollision;
+        OnCollision -= DogCollision;
         OnCrowd -= CrowdCollision;
     }
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
+public enum PlayerType { Mailman, Dog }
+
 [RequireComponent(typeof (Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private GameManager gm;
+    [NonSerialized] public GameManager gm;
 
     public int playerindex;
+    public PlayerType playerType;
 
     [NonSerialized] public Vector2 wantedDirection;
     [NonSerialized] public Vector2 direction;
@@ -20,8 +22,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float tiling;
 
-    [NonSerialized] public PlayerControls controls;
-
     public bool stunned = false;
     [SerializeField] private float stunTime;
     private float stunTimer = 0;
@@ -29,17 +29,11 @@ public class PlayerController : MonoBehaviour
     public bool inCrowd = false;
     private int crowds = 0;
 
-    public event Action OnCollision;
+    public event Action<string> OnCollision;
     public event Action OnCrowd;
-
-    private void Awake()
-    {
-        controls = new PlayerControls();
-    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         gm = FindObjectOfType<GameManager>();
 
         actualSpeed = startSpeed;
@@ -131,16 +125,6 @@ public class PlayerController : MonoBehaviour
         direction = previousDirection;
         wantedDirection = Vector2.zero;
 
-        OnCollision?.Invoke();
-    }
-
-    private void OnEnable()
-    {
-        controls.Player.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.Player.Disable();
+        OnCollision?.Invoke(collision.gameObject.tag);
     }
 }

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5656522709839963123}
   m_Layer: 0
   m_Name: Mailman
-  m_TagString: Untagged
+  m_TagString: Mailman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,4 +181,5 @@ MonoBehaviour:
   tiling: 0.5
   stunned: 0
   stunTime: 3
+  inCrowd: 0
   bikeSpeedBoost: 5

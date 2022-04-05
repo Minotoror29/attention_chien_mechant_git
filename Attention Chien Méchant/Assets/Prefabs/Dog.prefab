@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1703089164834308244}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,11 +321,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerindex: 1
+  playerType: 1
   startSpeed: 5
   actualSpeed: 0
   tiling: 0.5
   stunned: 0
   stunTime: 3
+  inCrowd: 0
 --- !u!114 &1703089164834308244
 MonoBehaviour:
   m_ObjectHideFlags: 0
