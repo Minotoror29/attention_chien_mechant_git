@@ -20,27 +20,23 @@ public class PlayerInputHandler : MonoBehaviour
     public void Up()
     {
         if (controller != null)
-            if (!controller.stunned)
-                controller.wantedDirection = Vector2.up;
+            controller.Up();
     }
 
     public void Down()
     {
         if (controller != null)
-            if (!controller.stunned)
-                controller.wantedDirection = Vector2.down;
+            controller.Down();
     }
     public void Right()
     {
         if (controller != null)
-            if (!controller.stunned)
-                controller.wantedDirection = Vector2.right;
+            controller.Right();
     }
 
     public void Left()
     {
         if (controller != null)
-            if (!controller.stunned)
-                controller.wantedDirection = Vector2.left;
+            controller.Left();
     }
 }

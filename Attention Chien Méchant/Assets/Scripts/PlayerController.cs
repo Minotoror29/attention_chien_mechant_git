@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private GameManager gm;
 
     public int playerindex;
 
@@ -20,10 +21,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float tiling;
 
     [NonSerialized] public PlayerControls controls;
-    /*public KeyCode up;
-    public KeyCode down;
-    public KeyCode right;
-    public KeyCode left;*/
 
     public bool stunned = false;
     [SerializeField] private float stunTime;
@@ -43,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gm = FindObjectOfType<GameManager>();
 
         actualSpeed = startSpeed;
         direction = transform.position;
@@ -65,27 +63,26 @@ public class PlayerController : MonoBehaviour
 
     public void Up()
     {
-        if (!stunned)
+        if (!stunned && gm.canPlay)
             wantedDirection = Vector2.up;
     }
 
     public void Down()
     {
-        if (!stunned)
+        if (!stunned && gm.canPlay)
             wantedDirection = Vector2.down;
     }
     public void Right()
     {
-        if (!stunned)
+        if (!stunned && gm.canPlay)
             wantedDirection = Vector2.right;
     }
 
     public void Left()
     {
-        if (!stunned)
+        if (!stunned && gm.canPlay)
             wantedDirection = Vector2.left;
     }
-
 
     private void FixedUpdate()
     {

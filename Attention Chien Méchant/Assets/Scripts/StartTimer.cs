@@ -18,6 +18,7 @@ public class StartTimer : MonoBehaviour
         } else
         {
             timerCanvas.SetActive(false);
+            GetComponent<GameManager>().canPlay = true;
         }
 
         if (timer > 2)
