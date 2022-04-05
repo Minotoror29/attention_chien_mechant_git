@@ -49,7 +49,7 @@ public class Crowd : MonoBehaviour
             } else
             {
                 deactivated = false;
-                transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.red;
+                transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.yellow;
             }
         }
     }
