@@ -16,10 +16,7 @@ public class Crowd : MonoBehaviour
         {
             if (collision.GetComponent<PlayerController>())
             {
-                if (!collision.GetComponent<PlayerController>().inCrowd)
-                {
-                    collision.GetComponent<PlayerController>().Crowd(true, speedReduction);
-                }
+                collision.GetComponent<PlayerController>().Crowd(true, speedReduction);
             }
         }
     }

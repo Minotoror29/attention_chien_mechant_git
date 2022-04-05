@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private float stunTimer = 0;
 
     public bool inCrowd = false;
+    private int crowds = 0;
 
     public event Action OnCollision;
     public event Action OnCrowd;
@@ -37,11 +38,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         controls = new PlayerControls();
-
-        /*controls.Gameplay.Up.performed += ctx => Up();
-        controls.Gameplay.Down.performed += ctx => Down();
-        controls.Gameplay.Right.performed += ctx => Right();
-        controls.Gameplay.Left.performed += ctx => Left();*/
     }
 
     private void Start()
@@ -60,26 +56,6 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeDirection()
     {
-        /*if (!stunned)
-        {
-            if (Input.GetKeyDown(up))
-            {
-                Up();
-            }
-            else if (Input.GetKeyDown(down))
-            {
-                Down();
-            }
-            else if (Input.GetKeyDown(right))
-            {
-                Right();
-            }
-            else if (Input.GetKeyDown(left))
-            {
-                Left();
-            }
-        }*/
-
         if (transform.position == (Vector3)direction)
         {
             previousDirection = direction;
@@ -137,13 +113,20 @@ public class PlayerController : MonoBehaviour
     {
         if (inCrowd)
         {
-            actualSpeed -= speedInCrowd;
+            if (crowds == 0)
+            {
+                actualSpeed -= speedInCrowd;
+            }
+            crowds += 1;
+            OnCrowd?.Invoke();
         } else
         {
-            actualSpeed = startSpeed;
+            crowds -= 1;
+            if (crowds == 0)
+            {
+                actualSpeed = startSpeed;
+            }
         }
-
-        OnCrowd?.Invoke();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
