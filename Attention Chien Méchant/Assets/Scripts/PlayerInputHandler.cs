@@ -39,4 +39,15 @@ public class PlayerInputHandler : MonoBehaviour
         if (controller != null)
             controller.Left();
     }
+
+    public void Bark()
+    {
+        if (controller != null)
+        {
+            if (controller.playerType == PlayerType.Dog)
+            {
+                controller.GetComponent<DogBark>().Bark();
+            }
+        }
+    }
 }

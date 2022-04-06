@@ -2,42 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof (DogController))]
 public class DogBark : MonoBehaviour
 {
-    public KeyCode barkKey;
-
     [SerializeField] private GameObject barkObject;
 
-    private float t = 0;
+    [SerializeField] private float cooldown;
+    private float cooldownTimer;
+    private bool canBark = true;
+
+    private float barkTime = 0;
+
+    private void Start()
+    {
+        cooldownTimer = 0;
+    }
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(barkKey))
-        {
-            Bark();
-        }*/
-
         if (barkObject.activeSelf)
         {
-            if (t > 0)
+            if (barkTime > 0)
             {
-                t -= Time.deltaTime;
+                barkTime -= Time.deltaTime;
             } else
             {
                 barkObject.SetActive(false);
             }
+        } else
+        {
+            if (cooldownTimer > 0)
+            {
+                cooldownTimer -= Time.deltaTime;
+            } else
+            {
+                canBark = true;
+                GetComponent<DogController>().inRage = false;
+            }
         }
     }
 
-    private void Bark()
+    public void Bark()
     {
-        if (barkObject.activeSelf)
+        if (barkObject.activeSelf || !canBark)
         {
             return;
         }
 
         barkObject.SetActive(true);
+        canBark = false;
+        cooldownTimer = cooldown;
 
-        t = 1;
+        GetComponent<DogController>().inRage = true;
+
+        barkTime = 1;
     }
 }

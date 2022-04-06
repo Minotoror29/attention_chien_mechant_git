@@ -236,8 +236,8 @@ GameObject:
   - component: {fileID: 1703089164834308245}
   - component: {fileID: 1703089164834308250}
   - component: {fileID: 1703089164834308251}
-  - component: {fileID: 1703089164834308248}
-  - component: {fileID: 1703089164834308244}
+  - component: {fileID: -8199304667031247046}
+  - component: {fileID: 5896714060812204730}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Dog
@@ -308,7 +308,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1703089164834308248
+--- !u!114 &-8199304667031247046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703089164834308249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8759a049c1afafb42b51c21ac055d03d, type: 3}
+  m_Script: {fileID: 11500000, guid: 85b28e16e436b7a4a84584f638ff0406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerindex: 1
@@ -328,7 +328,7 @@ MonoBehaviour:
   stunned: 0
   stunTime: 3
   inCrowd: 0
---- !u!114 &1703089164834308244
+--- !u!114 &5896714060812204730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,5 +340,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7ed59c1f93cf6489e23e61935f3ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barkKey: 32
   barkObject: {fileID: 1703089164359432133}
+  cooldown: 3
