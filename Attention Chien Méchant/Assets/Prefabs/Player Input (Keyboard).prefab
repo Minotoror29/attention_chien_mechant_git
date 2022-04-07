@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &741585056520504077
+--- !u!1 &7410726859330785904
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 741585056520504075}
-  - component: {fileID: 741585056520504076}
-  - component: {fileID: 741585056520504074}
+  - component: {fileID: 7410726859330785910}
+  - component: {fileID: 7410726859330785905}
+  - component: {fileID: 7410726859330785911}
   m_Layer: 0
-  m_Name: Player Input
+  m_Name: Player Input (Keyboard)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &741585056520504075
+--- !u!4 &7410726859330785910
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741585056520504077}
+  m_GameObject: {fileID: 7410726859330785904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &741585056520504076
+--- !u!114 &7410726859330785905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741585056520504077}
+  m_GameObject: {fileID: 7410726859330785904}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Up
         m_Mode: 1
@@ -75,7 +75,7 @@ MonoBehaviour:
     m_ActionName: Gameplay/Up[/XInputControllerWindows/leftStick/up,/Keyboard/w]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Down
         m_Mode: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
     m_ActionName: Gameplay/Down[/XInputControllerWindows/leftStick/down,/Keyboard/s]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Left
         m_Mode: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_ActionName: Gameplay/Left[/XInputControllerWindows/leftStick/left,/Keyboard/a]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Right
         m_Mode: 1
@@ -123,9 +123,9 @@ MonoBehaviour:
     m_ActionName: Gameplay/Right[/XInputControllerWindows/leftStick/right,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Up
+        m_MethodName: MailmanUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -139,9 +139,9 @@ MonoBehaviour:
     m_ActionName: Player 2/Up[/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Down
+        m_MethodName: MailmanDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -155,9 +155,9 @@ MonoBehaviour:
     m_ActionName: Player 2/Down[/Keyboard/downArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Left
+        m_MethodName: MailmanLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -171,9 +171,9 @@ MonoBehaviour:
     m_ActionName: Player 2/Left[/Keyboard/leftArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Right
+        m_MethodName: MailmanRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -187,7 +187,7 @@ MonoBehaviour:
     m_ActionName: Player 2/Right[/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741585056520504074}
+      - m_Target: {fileID: 7410726859330785911}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Bark
         m_Mode: 1
@@ -201,18 +201,98 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ae619051-efb8-4cbc-a5ef-0ee2edb317ac
     m_ActionName: Player/Bark[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7410726859330785911}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DogUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c61772cb-423a-4156-9f35-9b9dc9a09661
+    m_ActionName: Player (Keyboard)/Dog Up[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7410726859330785911}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DogDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6cf5c594-e47f-423f-bceb-01463a0ae9d7
+    m_ActionName: Player (Keyboard)/Dog Down[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7410726859330785911}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DogLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bf531c03-5c85-4650-a098-d2cb8d9dbb33
+    m_ActionName: Player (Keyboard)/Dog Left[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7410726859330785911}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DogRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3f6a0458-44b8-4ed8-8660-cca9d56727e3
+    m_ActionName: Player (Keyboard)/Dog Right[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7410726859330785911}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DogBark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bd1a5d35-c8d2-4b30-bcda-ce2c29f6c5d3
+    m_ActionName: Player (Keyboard)/Dog Bark[/Keyboard/numpad0]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Player (Keyboard)
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &741585056520504074
+--- !u!114 &7410726859330785911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741585056520504077}
+  m_GameObject: {fileID: 7410726859330785904}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b49cb6d397717e8479d2e6be789d96aa, type: 3}

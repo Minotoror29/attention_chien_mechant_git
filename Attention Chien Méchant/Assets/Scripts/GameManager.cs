@@ -19,6 +19,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         actualMailBoxes = mailBoxesToWin;
+
+        var playerInputs = FindObjectsOfType<PlayerInputHandler>();
+
+        foreach (var item in playerInputs)
+        {
+            item.SetPlayer();
+        }
     }
 
     public void GatherMailBox()

@@ -2,7 +2,7 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "Player",
+            "name": "Player (Multiple Controllers)",
             "id": "3284114b-d481-4572-bda9-705387d4521a",
             "actions": [
                 {
@@ -145,15 +145,26 @@
                     "action": "Bark",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34cccfd2-c71a-48c8-a786-49ac0dd5d9f4",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bark",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Player 2",
+            "name": "Player (Keyboard)",
             "id": "aa031e35-8623-49dc-be71-c9dd93c38289",
             "actions": [
                 {
-                    "name": "Up",
+                    "name": "Mailman Up",
                     "type": "Button",
                     "id": "4f7c0949-a345-4f4a-bb24-6bcb13550d78",
                     "expectedControlType": "Button",
@@ -161,7 +172,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Down",
+                    "name": "Mailman Down",
                     "type": "Button",
                     "id": "f0717517-0b46-4bc9-bbbc-9593701b7688",
                     "expectedControlType": "Button",
@@ -169,7 +180,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Left",
+                    "name": "Mailman Left",
                     "type": "Button",
                     "id": "beb62b23-2120-4c0c-b3de-8cc8c5aa8505",
                     "expectedControlType": "Button",
@@ -177,9 +188,49 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Right",
+                    "name": "Mailman Right",
                     "type": "Button",
                     "id": "512b8c4d-d434-4871-a927-83b15c70a9fd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dog Up",
+                    "type": "Button",
+                    "id": "c61772cb-423a-4156-9f35-9b9dc9a09661",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dog Down",
+                    "type": "Button",
+                    "id": "6cf5c594-e47f-423f-bceb-01463a0ae9d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dog Left",
+                    "type": "Button",
+                    "id": "bf531c03-5c85-4650-a098-d2cb8d9dbb33",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dog Right",
+                    "type": "Button",
+                    "id": "3f6a0458-44b8-4ed8-8660-cca9d56727e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dog Bark",
+                    "type": "Button",
+                    "id": "bd1a5d35-c8d2-4b30-bcda-ce2c29f6c5d3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -188,89 +239,100 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "c5c62d89-78f8-4bd2-9093-57adf8f64e38",
+                    "id": "7a6223cc-b7df-452d-b0a2-26e535e47559",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mailman Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f862077-79be-4f89-ad7a-ef4321420446",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mailman Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80bf552d-86b7-4d9f-9eee-2fc6827a2379",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mailman Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbfc8bfe-0645-4ae0-a11d-bd9947f18d60",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mailman Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "664fd318-19b3-4c7d-8cf3-b89218f1636e",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up",
+                    "action": "Dog Up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3d5e4d53-f689-4a7f-b95d-63f5fa494dd9",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "41e8e901-1ff3-4db7-8aa1-220d952150b6",
+                    "id": "ac2ffc4b-cb49-4158-ba6b-f99dc9802d8b",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Down",
+                    "action": "Dog Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1ac9bba6-4738-4aa5-b92f-e8ed79c2fbe9",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cc1939b5-c28d-4f89-addb-dcc1e67f5d87",
+                    "id": "a93dd69f-be62-4443-bf43-3fcd0286117d",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Left",
+                    "action": "Dog Left",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "71208ec3-0e42-42a6-af56-31bfc3c1b4d1",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Left",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fa6f838f-702f-4063-8c1d-fd7bb03e0858",
+                    "id": "a34b5c93-1290-4e2a-9058-9cd3564372f3",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Right",
+                    "action": "Dog Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ff829a8b-4cb1-46f4-9744-f7434fc1b60b",
-                    "path": "<Gamepad>/leftStick/right",
+                    "id": "103e6169-9cba-4768-a550-5cc31a22a08c",
+                    "path": "<Keyboard>/numpad0",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Right",
+                    "action": "Dog Bark",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
