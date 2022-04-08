@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,20 @@ public class GameManager : MonoBehaviour
     {
         actualMailBoxes = mailBoxesToWin;
 
+        SetPlayers();
+    }
+
+    private void Update()
+    {
+        // /!\ Test ! A retirer ! /!\
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SetPlayers();
+        }
+    }
+
+    public void SetPlayers()
+    {
         var playerInputs = FindObjectsOfType<PlayerInputHandler>();
 
         foreach (var item in playerInputs)
@@ -47,5 +62,10 @@ public class GameManager : MonoBehaviour
 
         gameOverText.text = type.ToString().ToUpper() + " WINS";
         gameOverCanvas.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
