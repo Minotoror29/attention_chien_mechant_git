@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerindex: 1
   playerType: 1
-  startSpeed: 5
+  startSpeed: 25
   actualSpeed: 0
   tiling: 0.5
   stunned: 0

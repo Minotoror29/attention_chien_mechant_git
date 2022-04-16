@@ -80,7 +80,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, direction, actualSpeed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, direction, actualSpeed * Time.deltaTime);
+        transform.position = Vector2.Lerp(transform.position, direction, actualSpeed * Time.deltaTime);
     }
 
     public void Stun()
@@ -106,7 +107,7 @@ public class PlayerController : MonoBehaviour
         {
             if (crowds == 0)
             {
-                actualSpeed -= speedInCrowd;
+                actualSpeed /= speedInCrowd;
             }
             crowds += 1;
             OnCrowd?.Invoke();

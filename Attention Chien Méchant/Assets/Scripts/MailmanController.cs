@@ -15,7 +15,7 @@ public class MailmanController : PlayerController
         }
 
         onBike = true;
-        actualSpeed += bikeSpeedBoost;
+        actualSpeed *= bikeSpeedBoost;
         wantedDirection = Vector2.zero;
         Destroy(bike);
     }

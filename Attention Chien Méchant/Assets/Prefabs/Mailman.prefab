@@ -177,10 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerindex: 0
   playerType: 0
-  startSpeed: 5
+  startSpeed: 25
   actualSpeed: 0
   tiling: 0.5
   stunned: 0
   stunTime: 3
   inCrowd: 0
-  bikeSpeedBoost: 5
+  bikeSpeedBoost: 1.25

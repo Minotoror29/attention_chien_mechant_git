@@ -1087,10 +1087,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5656522709839963123, guid: 279629964f98ed540b38a5759177c556, type: 3}
-      propertyPath: startSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5656522709839963124, guid: 279629964f98ed540b38a5759177c556, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2632,7 +2628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1383500155
 Transform:
   m_ObjectHideFlags: 0
