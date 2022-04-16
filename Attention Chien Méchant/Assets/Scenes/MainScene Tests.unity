@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1827540419}
   game: 0
-  startTime: 2
+  startTime: 20
 --- !u!1 &178583494
 GameObject:
   m_ObjectHideFlags: 0

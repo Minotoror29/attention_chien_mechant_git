@@ -32,7 +32,14 @@ public class GameTimer : MonoBehaviour
         } else
         {
             game = false;
-            gm.GameOver(PlayerType.Draw);
+            if (gm.actualMailBoxes <= 0)
+            {
+                gm.GameOver(PlayerType.Mailman);
+            }
+            else
+            {
+                gm.GameOver(PlayerType.Draw);
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject dog;
 
     [SerializeField] private int mailBoxesToWin;
-    private int actualMailBoxes;
+    [System.NonSerialized] public int actualMailBoxes;
 
     [SerializeField] private GameObject gameOverCanvas;
     [SerializeField] private Text gameOverText;
@@ -69,11 +69,6 @@ public class GameManager : MonoBehaviour
     public void GatherMailBox()
     {
         actualMailBoxes -= 1;
-
-        if (actualMailBoxes == 0)
-        {
-            GameOver(PlayerType.Mailman);
-        }
     }
 
     public void GameOver(PlayerType type)
