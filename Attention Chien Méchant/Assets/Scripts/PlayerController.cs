@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
-public enum PlayerType { Mailman, Dog }
+public enum PlayerType { Mailman, Dog , Draw}
 
 [RequireComponent(typeof (Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = GameManager.Instance;
 
         actualSpeed = startSpeed;
         direction = transform.position;

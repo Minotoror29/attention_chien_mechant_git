@@ -10,7 +10,7 @@ public class MailBox : MonoBehaviour
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = GameManager.Instance;
     }
 
     public void GatherMailBox()

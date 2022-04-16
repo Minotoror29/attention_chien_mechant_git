@@ -22,7 +22,7 @@ public class StartTimer : MonoBehaviour
             else
             {
                 timerCanvas.SetActive(false);
-                GetComponent<GameManager>().canPlay = true;
+                GetComponent<GameManager>().StartGame();
                 counting = false;
             }
         }
